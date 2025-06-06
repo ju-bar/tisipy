@@ -1,0 +1,132 @@
+{
+    "title" : "STEM image simulation of SrTiO3 [100]",
+
+    "instrument" : {
+
+        "name" : "TFS Spectra 300",
+
+        "beam" : {
+            "energy" : 300.0,
+            "convergence" : 30.0
+        },
+
+        "optics" : {
+            "mode" : "STEM",
+            "scan" : {
+                "size" : {
+                    "width" : 0.3901,
+                    "height" : 0.3901
+                },
+                "offset" : {
+                    "x" : 0.0,
+                    "y" : 0.0
+                },
+                "sampling" : {
+                        
+                    "x" : 40,
+                    "y" : 40
+                },
+                "orientation" : 0.0
+            }
+        },
+
+        "detectors" : {
+            "diffraction" : {
+                "STEM" : [
+                    {   "name" : "HAADF",
+                        "inner" : 80.0,
+                        "outer" : 200.0
+                    },
+                    {   "name" : "ABF",
+                        "inner" : 15.0,
+                        "outer" : 30.0
+                    },
+                    {   "name" : "BF",
+                        "inner" : 0.0,
+                        "outer" : 10
+                    },
+                    {   "name" : "DPC_1_0",
+                        "inner" : 15.0,
+                        "outer" : 40.0,
+                        "sector" : {
+                            "start" : -45.0,
+                            "end" : 45.0
+                        }
+                    },
+                    {   "name" : "DPC_1_1",
+                        "inner" : 15.0,
+                        "outer" : 40.0,
+                        "sector" : {
+                            "start" : 45.0,
+                            "end" : 135.0
+                        }
+                    },
+                    {   "name" : "DPC_1_2",
+                        "inner" : 15.0,
+                        "outer" : 40.0,
+                        "sector" : {
+                            "start" : 135.0,
+                            "end" : 225.0
+                        }
+                    },
+                    {   "name" : "DPC_1_3",
+                        "inner" : 15.0,
+                        "outer" : 40.0,
+                        "sector" : {
+                            "start" : 225.0,
+                            "end" : 315.0
+                        }
+                    }
+                ],
+                "pixelated" : [
+                    {   "name" : "pdif",
+                        "crop" : {
+                            "x" : 128,
+                            "y" : 128
+                        }
+                    }
+                ]
+            }
+        }
+    },
+
+    "sample" : {
+
+        "structure" : {
+            "file" : "STO_001_4x4.cel"
+        },
+
+        "thickness" : {
+            "maximum" : 9.7525,
+            "step" : 1.9505
+        }
+    },
+
+    "calculation" : {
+
+        "program" : {
+            "name" : "drprobe_clt",
+            "binary_path" : "F:\\Tools\\drprobe\\bin"
+        },
+
+        "sampling" : {
+            "x" : 512,
+            "y" : 512,
+            "z" : 2
+        },
+
+        "phonon" : {
+            "model" : "QEP",
+            "configurations" : 100,
+            "passes" : 1,
+            "absorption" : false,
+            "separate_elastic" : false
+        }
+    },
+
+    "output" : {
+        "directory" : "F:\\Data\\Simulation\\SrTiO3\\example05",
+        "prefix" : "sto"
+    }
+    
+}

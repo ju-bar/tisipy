@@ -1,0 +1,156 @@
+{
+    "title" : "simulation parameters",
+    "description" : "Parameters for running TEM and STEM image simulations.",
+    "type" : "object",
+
+    "properties" : {
+
+        "title" : {
+            "description" : "Title of the parameter set, short description",
+            "type" : "string"
+        },
+
+        "instrument" : {
+            "description" : "Instrument parameters related to the hardware",
+            "type" : "object",
+            "properties" : {
+
+                "name" : {
+                    "description" : "Name of the instrument for used identification",
+                    "type" : "str"
+                },
+
+                "beam" : {
+                    "description" : "Electron beam parameters",
+                    "type" : "object",
+                    "properties" : {
+
+                        "energy" : {
+                            "description" : "Electron beam energy in keV",
+                            "type" : "float"
+                        },
+
+                        "convergence" : {
+                            "description" : "Beam convergence in mrad",
+                            "type" : "float"
+                        }
+                    }
+                },
+            
+
+                "optics" : {
+                    "description" : "Optical parameters",
+                    "type" : "object",
+                    "properties" : {
+
+                        "mode" : {
+                            "description" : "General mode of the instrument (TEM, STEM)",
+                            "type" : "str"
+                        },
+
+                        "scan" : {
+                            "description" : "Scanning setup",
+                            "type" : "object",
+                            "properties" : {
+
+                                "size" : {
+                                    "description" : "scan frame size",
+                                    "type" : "object",
+                                    "properties" : {
+                                        
+                                        "width" : {
+                                            "description" : "fast scan (x) size in nm",
+                                            "type" : "float"
+                                        },
+                                        
+                                        "height" : {
+                                            "description" : "slow scan (y) size in nm",
+                                            "type" : "float"
+                                        }
+                                    }
+                                },
+
+                                "offset" : {
+                                    "description" : "scan frame offset from sample coordinates",
+                                    "type" : "object",
+                                    "properties" : {
+                                        
+                                        "x" : {
+                                            "description" : "x offset in nm",
+                                            "type" : "float"
+                                        },
+                                        
+                                        "y" : {
+                                            "description" : "y offset in nm",
+                                            "type" : "float"
+                                        }
+                                    }
+                                },
+
+                                "sampling" : {
+                                    "description" : "scan frame number of samples / scan steps",
+                                    "type" : "object",
+                                    "properties" : {
+                                        
+                                        "x" : {
+                                            "description" : "x samples",
+                                            "type" : "int"
+                                        },
+                                        
+                                        "y" : {
+                                            "description" : "y samples",
+                                            "type" : "int"
+                                        }
+                                    }
+                                },
+
+                                "orientation" : {
+                                    "description" : "scan frame rotation to sample x axis in degree",
+                                    "type" : "float"
+                                }
+                            }
+                        }
+
+                    }
+                },
+
+                "detectors" : {
+                    "description" : "Detector parameters",
+                    "type" : "object",
+                    "properties" : {
+
+                    }
+                }
+            }
+        },
+
+        "sample" : {
+            "description" : "Parameters providing access to sample parameters",
+            "type" : "object",
+            "properties" : {
+
+            }
+        },
+
+        "calculation" : {
+            "description" : "Calculation setup with numerical parameters",
+            "type" : "object",
+            "properties" : {
+
+            }
+        },
+
+        "output" : {
+            "description" : "Output file parameters",
+            "type" : "object",
+            "properties" : {
+
+                "prefix" : {
+                    "description" : "global file name prefix including path if needed",
+                    "type" : "str"
+                }
+            }
+        }
+    }
+    
+}
